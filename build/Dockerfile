@@ -13,8 +13,8 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 ENV TZ=Asia/Shanghai
 
-# Install C++ and Python with other tools
-RUN apt update && apt install -y g++ cmake gdb git python3 python3-pip curl unzip
+# Install C++, Python and Golang with other tools
+RUN apt update && apt install -y g++ cmake gdb git python3 python3-pip golang-go curl unzip
 
 # Install conan
 RUN pip install conan && conan profile new default --detect && conan profile update settings.compiler.libcxx=libstdc++11 default
